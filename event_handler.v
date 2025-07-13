@@ -12,11 +12,11 @@ module event_handler (
 
     reg [1:0] state, next_state;
 
-    // Edge detection
+   
     reg button_prev;
     wire button_rising = ~button_prev & button;
 
-    // FSM and counter logic
+   
     always @(posedge clk) begin
         if (reset) begin
             state <= IDLE;
@@ -31,7 +31,7 @@ module event_handler (
         end
     end
 
-    // Next state logic
+ 
     always @(*) begin
         case (state)
             IDLE:  next_state = button_rising ? COUNT : IDLE;

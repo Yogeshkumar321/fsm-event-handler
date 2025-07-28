@@ -1,11 +1,11 @@
 module event_handler (
     input wire clk,
-    input wire reset,      // Active high synchronous reset
-    input wire button,     // Button input
-    output reg [3:0] count // 4-bit event counter
+    input wire reset,
+    input wire button,    
+    output reg [3:0] count 
 );
 
-    // FSM states
+   
     parameter IDLE  = 2'b00;
     parameter COUNT = 2'b01;
     parameter WAIT  = 2'b10;
